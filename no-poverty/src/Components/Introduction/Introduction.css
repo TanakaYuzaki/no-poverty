@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container {
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.image {
+    flex: 0 0 350px; /* fixed base width for logo section */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.image img {
+    display: block;
+    width: 100%;        /* fills the container */
+    height: auto;       /* keeps aspect ratio */
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+    object-fit: cover;  /* ensures image fills nicely */
+    max-height: 400px;  /* prevents it from getting too tall */
+}
+
+.image:hover img {
+    transform: scale(1.05);
+}
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image:hover .caption {
+    opacity: 1;
+}
+
+.caption img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.caption p {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.text p {
+    font-family: "Roboto", sans-serif;
+    color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+}

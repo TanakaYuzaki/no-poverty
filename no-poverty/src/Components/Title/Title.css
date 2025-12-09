@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.title {
+    text-align: center;
+    color: #CC5500;
+    font-size: 40px;       /* Larger for impact */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 100px 0 40px;
+    letter-spacing: 4px;   /* Wide spacing for grandeur */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* Depth without external tricks */
+}
+
+.title p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    opacity: 0.85;         /* Softer supporting text */
+    letter-spacing: 1px;
+}
+
+.title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;       /* Hero size */
+    font-weight: 900;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* Cinematic glow */
+}

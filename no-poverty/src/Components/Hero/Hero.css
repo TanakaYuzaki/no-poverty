@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+NO:wght@100..400&display=swap');
+
+.hero-container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(4, 4, 7, 0.7)),url('../../assets/No_Poverty.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero-text{
+    text-align: center;
+    max-width: 800px;
+    color: 	#CC5500;
+}
+
+.hero-text h1{
+    font-size: 60px;
+    font-weight: 600;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.hero-text p{
+    font-size: 20px;
+    font-weight: 200;
+    font-family: "Inter", sans-serif;
+    color:#fff
+}

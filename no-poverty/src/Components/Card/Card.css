@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Grid container for multiple cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 60px;
+  justify-items: center;
+  background: radial-gradient(circle at center, #0d0d0d, #000); /* dark cinematic backdrop */
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  width: 340px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  cursor: pointer;
+  perspective: 1000px; /* depth effect */
+}
+
+.card:hover {
+  transform: scale(1.08) rotateY(3deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 1);
+}
+
+/* Image section */
+.card-image {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.2) saturate(1.1);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1.3) saturate(1.3);
+}
+
+/* Cinematic overlay glow */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 204, 0, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Content overlay */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+  color: #f5f5f5;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Name styling */
+.card-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #e6e6e6;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+}
+
+/* Role styling */
+.card-role {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 10px 0;
+  color: #ffcc00;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Description styling */
+.card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d9d9d9;
+  margin-top: 14px;
+  font-style: italic;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}

@@ -1,0 +1,170 @@
+/* ===== Scoped cinematic styling with #CC5500 theme ===== */
+
+.quynh-profile {
+  /* Theme variables */
+  --accent: #CC5500;           /* primary accent */
+  --accent-rgb: 204, 85, 0;    /* for rgba glows/shadows */
+  --accent-soft: #e06610;      /* slightly lighter */
+  --accent-dark: #a34700;      /* slightly darker */
+
+  min-height: 100vh;
+  width: 100%;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  font-family: 'Cinzel', serif;
+}
+
+/* Heading */
+.quynh-heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #f5f5f5;
+  margin: 24px 0 12px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(var(--accent-rgb), 0.65);
+}
+
+/* Image container */
+.quynh-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 68vh;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 12px;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.quynh-image > img {
+  max-height: 100%;
+  width: auto;
+  object-fit: cover;
+  filter: brightness(0.88) contrast(1.2) saturate(1.08);
+  transition: transform 2s ease, filter 2s ease;
+}
+
+.quynh-image > img:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.28);
+}
+
+/* Caption — namespaced to avoid conflicts */
+.quynh-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  animation: quynhFadeInUp 1.3s ease forwards;
+  border: 1px solid rgba(var(--accent-rgb), 0.5);
+}
+
+.quynh-caption img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(var(--accent-rgb), 0.85));
+  transition: transform 0.25s ease;
+}
+
+.quynh-caption img:hover {
+  transform: scale(1.08);
+}
+
+.quynh-caption-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.85);
+}
+
+/* Class information card */
+.class-information {
+  margin: 26px auto 0;
+  padding: 18px 24px;
+  max-width: 640px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(var(--accent-rgb), 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+  backdrop-filter: blur(6px);
+  animation: quynhFadeIn 1.6s ease forwards;
+}
+
+.class-information h1 {
+  font-size: 1.4rem;
+  margin: 8px 0;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.8);
+  letter-spacing: 0.6px;
+}
+
+/* Description section */
+.description {
+  margin: 34px auto 0;
+  max-width: 860px;
+  padding: 26px 26px 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  line-height: 1.8;
+  animation: quynhFadeInUp 2s ease forwards;
+}
+
+.description h2 {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.9);
+}
+
+.description p {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: #f5f5f5;
+  text-align: justify;
+}
+
+/* Animations */
+@keyframes quynhFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes quynhFadeInUp {
+  from { opacity: 0; transform: translateY(38px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quynh-heading { font-size: 2.2rem; }
+  .quynh-image { height: 52vh; }
+  .quynh-caption {
+    bottom: 18px;
+    left: 18px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .quynh-caption img { width: 24px; height: 24px; }
+  .quynh-caption-text { font-size: 0.95rem; }
+  .class-information { max-width: 92%; }
+  .description { max-width: 92%; padding: 22px 22px 6px; }
+}
