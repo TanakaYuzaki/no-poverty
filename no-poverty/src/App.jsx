@@ -13,7 +13,7 @@ import Contract from './Pages/Contract.jsx'
 function App(){
   let Component
     switch(window.location.pathname){
-      case "/no-poverty":
+      case "/no-poverty/":
         Component=<Home></Home>
         break;
       case "/no-poverty/video":
@@ -25,22 +25,22 @@ function App(){
       case "/no-poverty/contract":
         Component= <Contract></Contract>
         break;
-      case "/quynh":
+      case "/no-poverty/quynh":
         Component=<AboutQuynh></AboutQuynh>
         break;
-      case "/anh":
+      case "/no-poverty/anh":
         Component=<AboutAnh></AboutAnh>
         break;
-      case "/loi":
+      case "/no-poverty/loi":
         Component=<AboutLoi></AboutLoi>
         break;
-      case "/nghia":
+      case "/no-poverty/nghia":
         Component=<AboutNghia></AboutNghia>
         break;
-      case "/khang":
+      case "/no-poverty/khang":
         Component=<AboutKhang></AboutKhang>
         break;
-      case "/khoa":
+      case "/no-poverty/khoa":
         Component=<AboutKhoa></AboutKhoa>
         break;
     }

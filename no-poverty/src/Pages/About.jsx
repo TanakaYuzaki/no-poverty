@@ -40,13 +40,13 @@ export default function About(){
         
         <Title subtitle="Các thành viên của Nhóm"></Title>
         <div className="card-grid">
-        <Card image={quynh} name="Nguyễn Nhật Quỳnh" role="Nhóm Trưởng" description="MSSV: 25127131" link="/quynh"/>
-        <Card image={Anh} name="Dương Trung Anh" role="Thư Ký" description="MSSV: 25127012" link="/anh"/>
-        <Card image={Lợi} name="Hà Hoàng Lợi" role="Thành Viên" description="MSSV: 25127089" link="/loi"/>
+        <Card image={quynh} name="Nguyễn Nhật Quỳnh" role="Nhóm Trưởng" description="MSSV: 25127131" link="/no-poverty/quynh"/>
+        <Card image={Anh} name="Dương Trung Anh" role="Thư Ký" description="MSSV: 25127012" link="/no-poverty/anh"/>
+        <Card image={Lợi} name="Hà Hoàng Lợi" role="Thành Viên" description="MSSV: 25127089" link="/no-poverty/loi"/>
 
-        <Card image={Nghĩa} name="Nguyễn Tuấn Nghĩa" role="Thành viên" description="MSSV: 25127101" link="/nghia"/>
-        <Card image={Khang} name="Nguyễn Duy Khang" role="Thành Viên" description="MSSV: 25127367" link= "/khang" />
-        <Card image={Khoa} name="Phạm Nhật Đăng Khoa" role="Thành Viên" description="MSSV: 25127382" link= "/khoa" />
+        <Card image={Nghĩa} name="Nguyễn Tuấn Nghĩa" role="Thành viên" description="MSSV: 25127101" link="/no-poverty/nghia"/>
+        <Card image={Khang} name="Nguyễn Duy Khang" role="Thành Viên" description="MSSV: 25127367" link= "/no-poverty/khang" />
+        <Card image={Khoa} name="Phạm Nhật Đăng Khoa" role="Thành Viên" description="MSSV: 25127382" link= "/no-poverty/khoa" />
         </div>
         {component}
         </>
