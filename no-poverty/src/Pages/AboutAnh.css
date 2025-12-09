@@ -1,5 +1,5 @@
 /* ===== Scoped cinematic styling with #CC5500 theme (Anh) ===== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .anh-profile {
   /* Theme variables */
   --accent: #CC5500;           /* primary accent */
@@ -27,6 +27,7 @@
   margin: 24px 0 12px;
   letter-spacing: 3px;
   text-shadow: 0 0 15px rgba(var(--accent-rgb), 0.65);
+  
 }
 
 /* Image container */
