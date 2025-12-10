@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar/Navbar.jsx'
 import Home from './Pages/Home.jsx'
 import Video from './Pages/Video.jsx'
@@ -10,52 +11,37 @@ import AboutNghia from "./Pages/AboutNghia.jsx"
 import AboutKhang from './Pages/AboutKhang.jsx'
 import AboutKhoa from './Pages/AboutKhoa.jsx'
 import Contract from './Pages/Contract.jsx'
+
 function App(){
-  let Component
-    switch(window.location.pathname){
-      case "/no-poverty/":
-        Component=<Home></Home>
-        break;
-      case "/no-poverty/video":
-        Component=<Video></Video>
-        break;
-      case "/no-poverty/about":
-        Component=<About></About>
-        break;
-      case "/no-poverty/contract":
-        Component= <Contract></Contract>
-        break;
-      case "/no-poverty/quynh":
-        Component=<AboutQuynh></AboutQuynh>
-        break;
-      case "/no-poverty/anh":
-        Component=<AboutAnh></AboutAnh>
-        break;
-      case "/no-poverty/loi":
-        Component=<AboutLoi></AboutLoi>
-        break;
-      case "/no-poverty/nghia":
-        Component=<AboutNghia></AboutNghia>
-        break;
-      case "/no-poverty/khang":
-        Component=<AboutKhang></AboutKhang>
-        break;
-      case "/no-poverty/khoa":
-        Component=<AboutKhoa></AboutKhoa>
-        break;
-    }
+  const [route, setRoute] = useState(() => window.location.hash.replace('#','') || '/');
 
-  return(
-    
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash.replace('#','') || '/');
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
 
+  let Component = null;
+  switch(route){
+    case "/": Component = <Home />; break;
+    case "/video": Component = <Video />; break;
+    case "/about": Component = <About />; break;
+    case "/contract": Component = <Contract />; break;
+    case "/quynh": Component = <AboutQuynh />; break;
+    case "/anh": Component = <AboutAnh />; break;
+    case "/loi": Component = <AboutLoi />; break;
+    case "/nghia": Component = <AboutNghia />; break;
+    case "/khang": Component = <AboutKhang />; break;
+    case "/khoa": Component = <AboutKhoa />; break;
+    default: Component = <Home />; break;
+  }
+
+  return (
     <>
-    <Navbar></Navbar>
-    {Component}
-    <Footer></Footer>
-    
-    
+      <Navbar />
+      {Component}
+      <Footer />
     </>
-
   );
 }
-export default App
+export default App;
